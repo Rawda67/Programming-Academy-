@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login|sign up</title>
+    <style>
+        body{
+    background-image: url(media/logoimg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.signinButton{
+        background: linear-gradient(to left , #bc1bb7, #a5d3ab);  
+        color: rgb(255, 255, 255);  
+        font-size: 16px;
+        padding: 10px 20px;  
+        border: none;
+        border-radius: 5px;   
+        margin: 10px;
+         display: block;
+        box-shadow: 2px 2px 5px #000000;
+    }
+    
+     button:hover { 
+        transform: scale(1.04); 
+        color: #000000; 
+    }
+ 
+.signIn{
+backdrop-filter: blur(2px);
+margin-left: 60%;
+margin-top: 200px;
+transition: 0.15s;
+border-radius: 25px;
+width: 450px;
+height: 450px;
+box-shadow: 10px 10px 15px rgba(0, 0,0,0.9);
+display: block;
+}
+.userContainer,.passContainer{
+    margin: 10px;
+    padding: 5px;
+    width:400px ;
+}
+.userLabel,.passLabel {
+    margin: 10px;
+    margin-bottom: 12px; 
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+     font-style: italic;
+     color: rgb(228, 78, 245);
+}
+.userInput,.passInput {
+       width: 300px;  
+       height: 20px;  
+       padding: 10px;  
+       font-size: 16px;  
+       border-radius: 20px;  
+       border: 2px solid wheat;   
+       outline: none;   
+       margin: 5px;
+     }
+     
+     .userInput:focus,.passInput:focus {
+       border-color: #E4B1F0;  
+       box-shadow: 0 0 10px rgba(228, 177, 240, 0.6);  
+     }
+
+h1,a{
+    color: aliceblue;
+    text-align: center;
+}
+a:hover{
+    color: #E4B1F0;
+}
+.ErrorMessage{
+    display: none;
+    color: red;
+    font-size: larger;
+}
+    </style>
+</head>
+<body>
+<div class="container" id="main">
+    <div class="signIn" id="signIn">
+        <form action="connection.php" method="post">
+            <h1>Sign in</h1>
+            <div class="userContainer">
+                <label for="user" class="userLabel">User Name:</label><br> 
+                <input type="text" placeholder="username " id="user"  class="userInput" name="UserName">
+                <p class="ErrorMessage" id="ErrorMessage">Hello</p>
+            </div>
+            <div class="passContainer">
+                <label for="pass" class="passLabel">Password:</label><br>
+                <input type="password" placeholder="Password" id="pass" class="passInput" name="password">
+                <p class="ErrorMessage" id="ErrorMessage2">Hello</p>
+            </div> 
+
+            <button class="signinButton" id="signinButton" onclick="" name="signin" type="submit">Sign in</button>
+           <a  href="index.html"> Do Not Have An Account? </a>
+            
+
+        </form>
+        
+    </div>
+    <script src="signin.js"></script>
+</div>
+</body>
+</html>

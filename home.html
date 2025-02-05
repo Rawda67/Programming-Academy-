@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="index.css">
+    <meta name="description" content="This is a website about programming courses">
+    <title>Programming Academy</title>
+    <style>
+:root{
+    --base-color:linear-gradient(to left, #674188, #7E60BF);
+    --text-Color:white;
+    --secondary-text:#e8bcf1;
+    --cards:#9B7EBD;
+    --cardsBoxShadow:#674188;
+    --buttonOFCards:rgb(218, 137, 218);
+    --buttonOFCardshover:rgba(218, 137,218,0.7);
+    --navlia:#E4B1F0;
+}
+.darkmode{
+    background-color: #2c193c;
+}
+         
+
+body{
+    background: linear-gradient(to left, #674188, #7E60BF);
+}
+
+    
+
+img {
+    width: 200px;  
+   border-radius: 25px; 
+}
+.courses
+{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 60vh;
+    max-width: 1100px;
+    margin: 50px auto;
+}
+.card{
+max-width: 320px; 
+height:440px; 
+border-radius: 10px; 
+box-shadow: 3px 5px 5px var(--navlia); 
+transition: 0.2s ease-in-out;
+background-color: var(--cards); 
+
+}
+.card:hover{
+    transform: scale(1.04);
+    box-shadow: 5px 5px 5px var(--cardsBoxShadow);
+    transition: 0.5s ease-in-out;
+}
+.card_content{
+        padding: 20px;
+        margin-bottom: 10px;}
+    .image_container{
+            margin: 10px;
+            padding: 15px;
+            display: flex;
+            justify-content: center; }
+    button{
+        background-color:var(--buttonOFCards);
+        margin-left: 150px;
+        border-style: none;
+        padding: 7px;
+        width: 110px;
+        border-radius: 25px;
+        font-weight:200;
+     }
+    button:hover{
+        background-color:var(--buttonOFCardshover);}
+
+   ul{
+       list-style-type:none;
+       margin:0 ;
+       padding:0 ;
+       overflow: hidden;
+      }
+      li{ 
+       float:right;
+      }
+      li a {
+       display:block;
+       padding: 18px 18px;
+       text-decoration: none;
+       color: var(--navlia);
+       font-weight: bold;
+       font-size: large;
+      }
+      li a:hover{
+       color:var(--text-Color);
+       text-decoration: underline;
+      }
+      .menubutton{
+        display: none;
+      }
+      .sidebar{
+        background-color: var(--cardsBoxShadow);
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        backdrop-filter: blur(10px);
+        background-color: rgba(255, 255, 255, 0.2);
+        display: none;
+      }
+      .sidebar li{
+        width: 100%;
+        display: block;
+      }
+      .logo{
+       text-align:left;
+       display: inline;
+       color: var(--navlia);
+       font-family:Verdana, Geneva, Tahoma, sans-serif  ;
+       font-style: italic;
+       margin: 6px;  
+      }
+   
+      .imagelogo{
+       width:60%; 
+      margin-top: 5%;
+      margin-left: 20%;
+      margin-right: 20%;
+       height: 500px;
+      }
+      .image{
+       width: 100%;
+      }
+      h2,H3{
+       color:#e8bcf1;
+        
+      } 
+      p{
+       color: white;
+       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+       font-style: italic; 
+      }
+      hr {
+       width: 500px; 
+       margin: 20px auto;  
+       margin-left: 0;
+       border: none;  
+       height: 3px;  
+       background: linear-gradient(to right, #C8A1E0, #FFE1FF);  
+   }
+   
+   .searchdiv {
+       margin-left: 5%;
+       width: 65%;
+       height:470px;
+       background: #FFE1FF;
+       border-radius: 25px;
+       padding: 20px;
+       overflow-y: scroll;
+       display: none;
+     }
+     
+     .search {
+       width:80%;  
+       height: 40px;  
+       padding: 10px;  
+       font-size: 16px;  
+       border-radius: 20px;  
+       border: 2px solid wheat;   
+       outline: none;   
+       position: relative;
+       cursor: pointer;
+     }
+     .searchdiv::-webkit-scrollbar{
+        display: none;
+     }
+     .search:focus {
+       border-color: #E4B1F0;  
+       box-shadow: 0 0 10px rgba(228, 177, 240, 0.6);  
+     }
+     .coursesList{
+        padding: 20px 0;
+     }
+     .coursecard{
+        display: flex;
+        justify-items: center;
+        padding: 10px;
+     }
+     .coursecard img{
+        width: 50px;
+        height: 50px;
+        border-radius: 5px;
+        object-fit: contain;
+     }
+     .coursecard h3{
+font-size: 20px;
+color: #7E60BF;
+     }
+#theme-switch{
+    height: 30px;
+    width: 70px;
+    padding-top:5px;
+    border-radius: 50px;
+    background-color: var(--navlia);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 20px;
+    right: 20px;
+}
+#theme-switch svg:last-child{
+display: none;
+}
+  .darkmode #theme-switch svg:first-child{
+    display: none;
+    } 
+.darkmode #theme-switch svg:last-child{
+        display: block;
+        }  
+
+@media (max-width:800px) {
+    .hideonmobile{
+        display: none;
+    }
+    .menubutton{
+        display: block;
+    }
+    #theme-switch{
+        display: none;
+    }
+   
+}
+
+
+    </style>
+</head>
+<body class="darkmode">
+    <script src="index.js"></script>
+    <div class="container" id="home">
+        <nav class="NavBar">
+            
+            <ul class="sidebar" id="sidebar"> 
+                <li onclick=hideSideBar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#contacts">Contacts</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="index.php">Login|Sign up</a></li>
+            </ul>
+            <ul> 
+                <h2 class="logo">Programming Academy</h2>
+                <li class="hideonmobile"><a href="index.html">Login|Sign up</a></li>
+                <li class="menubutton" onclick=showSideBar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="40px"  viewBox="0 -960 960 800" width="29px" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+                <li class="hideonmobile"><a href="#contacts">Contacts</a></li>
+                <li class="hideonmobile"><a href="#about">About</a></li>
+                <li class="hideonmobile"><a href="#news">News</a></li>
+                <li class="hideonmobile"><a href="#courses">Courses</a></li>
+                <li class="hideonmobile"><a href="#home">Home</a></li>
+               <li style="padding-top: 15px;">
+                <button id="theme-switch" onclick="themeSwitch">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"/></svg>
+                </button>
+               </li> 
+            </ul>
+         
+        </nav>
+        <div class="image">
+            <img src="media/logoimg.jpg" alt="programming image" class="imagelogo " >
+        </div>
+        <div>
+            <h2>All the skills you need in one place</h2>
+            <p>From critical skills to technical topics, we support your professional development.</p>
+            <hr>
+            <h2>Learning that gets you ahead</h2>
+            <p>Skills for your present (and your future). Get started with us.</p>
+        </div>
+        <hr>
+    </div>
+    <input type="text" placeholder="What do you want to learn?" id="search" class="search" onkeyup="search()">
+    <div class="searchdiv">
+        
+        <div class="coursesList">
+            <div class="coursecard">
+                    <img src="media/front.jpg" alt="Front End DEVLOPMENT" >
+                    <div class="card_container">
+                        <h3 style="margin-left: 10px; display: block;">Front End Development</h3>
+                        <a href="frontEndCourses.html"><button>View Courses</button></a> 
+                    </div>
+              
+            </div>
+            <div class="coursecard">
+                <img src="media/jsimage.jpeg" alt="Java Script" >
+                <div class="card_container">
+                    <h3 style="margin-left: 5px;">Java Script</h3>
+                    <a href="jsCourse.html"><button>View Courses</button></a> 
+            </div>
+           
+        </div>
+        <div class="coursecard">
+            <img src="media/back.jpg" alt="Back End DEVLOPMENT" >
+            <div class="card_container">
+                <h3 style="margin-left: 5px;">Back End Development</h3>
+                <a href="#"><button>View Courses</button></a> 
+        </div>
+       
+    </div>
+    <div class="coursecard">
+        <img src="media/mobileapp.jpg" alt="Mobile Development" >
+        <div class="card_container">
+            <h3 style="margin-left: 5px;">Mobile Development</h3>
+            <a href="#"><button>View Courses</button></a> 
+    </div>
+   
+</div>
+<div class="coursecard">
+    <img src="media/datascience1.jpg" alt=" Data Science" >
+    <div class="card_container">
+        <h3 style="margin-left: 5px;"> Data Science</h3>
+        <a href="#"><button>View Courses</button></a> 
+</div>
+
+</div>
+<div class="coursecard">
+    <img src="media/html3.jpeg" alt="HTML" >
+    <div class="card_container">
+        <h3 style="margin-left: 5px;">HTML</h3>
+        <a href="htmlCourse.html"><button>View Courses</button></a> 
+</div>
+
+</div>
+<div class="coursecard">
+    <img src="media/css-image.jpg" alt="CSS" >
+    <div class="card_container">
+        <h3 style="margin-left: 5px;">CSS</h3>
+        <a href="cssCourse.html"><button>View Courses</button></a> 
+</div>
+
+</div>
+
+        </div>
+    </div>
+
+    <div class="courses" id="courses">
+    
+            <div class="card">
+                <div class="image_container">
+                    <img src="media/front.jpg" alt="Front End DEVLOPMENT" >
+                </div>
+                    <div class="card_container">
+                        <h3 style="margin-left: 5px;">Front End Development</h3>
+                        <p style="margin-left: 7px;">
+                            Front-end development creates the visual and interactive parts of websites using HTML, CSS, and JavaScript,
+                            ensuring they are responsive, user-friendly, and accessible..</p>
+                </div>
+               <a href="frontEndCourses.html"><button>View Courses</button></a> 
+            </div>
+
+            <div class="card">
+                <div class="image_container">
+                    <img src="media/back.jpg" alt="Back end DEVLOPMENT" >
+                </div>
+                    <div class="card_container">
+                        <h3  style="margin-left: 5px;">Back End Development</h3>
+                        <p  style="margin-left: 7px;">
+                            Back-end development handles server-side operations, databases, and application logic to support and 
+                            deliver data to the front end securely and efficiently..
+                        </p>
+                </div>
+                <button>View Courses</button>
+            </div>
+            <div class="card">
+                <div class="image_container">
+                    <img style="height:180px; width: 300px;" src="media/mobileapp.jpg" alt="Mobile application DEVLOPMENT">
+                </div>
+                    <div class="card_container">
+                        <h3  style="margin-left: 5px;">Mobile Application Development</h3>
+                        <p  style="margin-left: 7px;">
+                            Mobile applications are software designed for smartphones and tablets, offering various functions
+                            and optimized for mobile use.
+    Problem Solving & Optimization.
+                        </p>
+                </div>
+                <button>View Courses</button>
+            </div>
+    
+            <div class="card">
+                <div class="image_container">
+                    <img style="height:180px; width: 300px;" src="media/datascience1.jpg" alt="Data Science DEVLOPMENT">
+                </div>
+                    <div class="card_container">
+                        <h3  style="margin-left: 5px;">Data Science</h3>
+                        <p  style="margin-left: 7px;">
+                            Data science analyzes data using statistics, programming, and machine learning to gain insights 
+                            and make informed decisions.
+                        </p>
+                </div>
+                <button>View Courses</button>
+            </div>
+        </div>
+    
+    </div>
+
+</body>
+<script  type="text/JavaScript">
+    function showSideBar()
+{
+document.getElementById("sidebar").style.display="flex";
+}
+function hideSideBar()
+{
+    document.getElementById("sidebar").style.display="none";
+}
+function search()
+{
+    let searchcontent=document.querySelector(".searchdiv");
+    let search=document.querySelector(".search").value.toUpperCase();
+    let coursecard=document.querySelectorAll(".coursecard");
+    let coursename=document.getElementsByTagName('h3');
+    for (let i = 0; i < coursename.length; i++) {
+        if(coursename[i].innerHTML.toUpperCase().indexOf(search)>= 0)
+        {
+            coursecard[i].style.display="block";
+            searchcontent.style.display="block";
+            
+        }else{
+            coursecard[i].style.display="none";
+        }
+        
+    }
+
+}
+</script>
+
+</html>

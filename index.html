@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login|sign up</title>
+    <style>
+        body{
+    background-image: url(media/logoimg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.signupButton{
+        background: linear-gradient(to left , #bc1bb7, #a5d3ab);  
+        color: rgb(255, 255, 255);  
+        font-size: 16px;
+        padding: 10px 20px;  
+        border: none;
+        border-radius: 5px;   
+        margin: 5px;
+        box-shadow: 2px 2px 5px #000000;
+    }
+    .signupButton{
+        background: linear-gradient(to left , #bc1bb7, #a5d3ab);  
+        color: rgb(255, 255, 255);  
+        font-size: 16px;
+        padding: 10px 20px;  
+        border: none;
+        border-radius: 5px;   
+        margin: 10px;
+         display: block;
+        box-shadow: 2px 2px 5px #000000;
+
+    }
+     button:hover { 
+         
+        transform: scale(1.04);  
+    }
+ 
+.signup{
+backdrop-filter: blur(2px);
+margin-left: 60%;
+margin-top: 120px;
+transition: 0.15s;
+border-radius: 25px;
+width: 450px;
+height: 670px;
+box-shadow: 10px 10px 15px rgba(0, 0,0,0.9);
+display: block;
+}
+.userContainer,.passContainer,.ensurepassContainer,.emailContainer,.genderContainer,.phoneContainer{
+    margin: 10px;
+    padding: 5px;
+    width:400px ;
+}
+.userLabel,.passLabel,.ensurepassLabel,.emailLabel,.phoneLabel,h4 {
+    margin: 10px;
+    margin-bottom: 12px; 
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+     font-style: italic;
+     color: rgb(228, 78, 245);
+}
+.userInput,.passInput,.ensurepassInput,.emailInput{
+       width: 300px;  
+       height: 20px;  
+       padding: 10px;  
+       font-size: 16px;  
+       border-radius: 20px;  
+       border: 2px solid wheat;     
+       margin: 5px;
+       outline: none;  
+     }
+     .femaleLabel, .maleLabel{
+        margin: 5px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     font-style: italic;
+     color: rgb(249, 242, 250);
+     }
+     
+     .userInput:focus,.passInput:focus,.ensurepassInput:focus, .emailInput:focus ,.phoneLabel:focus{
+        border-color: #E4B1F0;  
+        box-shadow: 0 0 10px rgba(228, 177, 240, 0.6);   
+     }
+
+h1{
+    color: aliceblue;
+    text-align: center;
+}
+p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: italic; 
+}
+a{
+    color: aliceblue;
+    text-align: center;
+}
+a:hover{
+    color: #E4B1F0;
+}
+.username{
+    display: none;
+    color: whitesmoke;
+}
+
+    </style>
+</head>
+<body>
+<div class="container" id="main">
+    <div class="signup" id="signIn">
+        <form action="connection.php" method="post">
+            <h1>Sign Up</h1>
+            <div class="userContainer">
+                <label for="user" class="userLabel">User Name:</label><br> 
+                <input type="text" placeholder="username " id="user" required name="UserName" class="userInput">
+                <p class="username"></p>
+            </div>
+
+            <div class="passContainer">
+                <label for="pass" class="passLabel">Password:</label><br>
+                <input type="password" placeholder="Password " id="pass" name="password" class="passInput" required>
+            </div> 
+            <div class="emailContainer">
+                <label for="email" class="emailLabel">Email:</label><br>
+                <input type="email" placeholder="Enter Your Email" id="email" required name="email" class="emailInput">
+            </div> 
+            <div class="phoneContainer">
+                <label for="phone" class="phoneLabel">Phone:</label><br>
+                <input type="number" placeholder="Enter Your Phone" id="phone" required name="phone" class="emailInput">
+            </div> 
+            <div class="genderContainer">
+                <div class="genderMale"> 
+                    <h4 class="gender">Gender</h4> 
+                <input type="radio" value="female"name="Gender"id="f">
+                <label for="f" class="femaleLabel">Female</label> </div>
+                <div class="genderFemale">    
+                <input type="radio" value="male"name="Gender"id="m">
+                <label for="m" class="maleLabel">Male</label></div>
+            </div>
+             
+            <button class="signupButton" type="submit" name="signup" onclick=" validate()">Sign Up</button>
+            <a href="login.html">Already have an account?</a>
+        </form>
+        
+    </div>
+    <script>
+        function validate(){  
+     let username=document.getElementById("user").value;
+     let ErrorMessage= document.querySelector(".username");
+   if(username.length<5) {
+        ErrorMessage.style.display="block";
+        ErrorMessage.innerHTML="The User Name Can`t be So Small !";
+     } 
+    }
+    </script>
+</div>
+</body>
+</html>
